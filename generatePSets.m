@@ -1,19 +1,6 @@
 %% reset environment
 clc; clear; close all;
 
-%% check that the pwd is the location of this script
-mfilePath = mfilename('fullpath');
-if contains(mfilePath,'LiveEditorEvaluationHelper')
-    mfilePath = matlab.desktop.editor.getActiveFilename;
-end
-[scriptPath, ~, ~] = fileparts(mfilePath);
-if ~strcmp(pwd, scriptPath)
-    disp("Warning, pwd is not this script's directory.");
-    if ~strcmpi(input('Continue [y/N]? '), 'y')
-        return;
-    end
-end
-
 %% refresh the output directory
 outdir = [pwd filesep 'Problem Sets'];
 if exist('Problem Sets', 'dir')
