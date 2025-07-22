@@ -45,7 +45,7 @@ Group_a_results = Results(Experimental_group == 'a')
 
     % It contains three vectors, each of which contains data for a
     % different property of each
-        % Biological sex (M/F) –  strings ‘m’ or ‘f’
+        % Biological sex (M/F):  strings "m" or "f"
         % Mass (g)
         % Tail length (mm)
 
