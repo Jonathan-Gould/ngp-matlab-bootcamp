@@ -2,7 +2,8 @@
 % C Burgess & K Furman
 % Updated 220725
 
-
+clc; clear; close all;
+load("/Users/jonathangould/Downloads/Burgess_MatlabModule/Problems Sets/Bootcamp_problem_set_2_data.mat")
 %% ----------------------- REVIEW: TYPES OF VARIABLES -----------------------
 
 % Some variables are not numbers! For example, experimental groups or
@@ -40,7 +41,6 @@ Group_a_results = Results(Experimental_group == 'a')
 % You can drag the .mat file into your Workspace
 % You can also use the 'load' function (type 'help load' below to see how
 % to use that function)
-
 % Here is an explanation of the data for this problem set:
 
     % It contains three vectors, each of which contains data for a
@@ -58,6 +58,10 @@ Group_a_results = Results(Experimental_group == 'a')
 
 %% space to work on analyses
 
+average_tail_length = mean(Tail_length);
+
+average_male_mass = mean(Mass(Sex == 'm'));
+average_female_mass = mean(Mass(Sex == 'f'));
 
 
 
@@ -98,10 +102,22 @@ title('Difference between groups')
 
 %% space to work on analyses
 
+figure;
+scatter(Mass, Tail_length, 100, 'filled');
+xlabel('mass (g)');
+ylabel('tail length (mm)');
+title("Scatterplot of mass vs. tail length");
 
+%%
+figure;
+scatter(Sex == 'm', Mass, 100, 'filled');
+xlim([-.5, 1.5]);
 
-
-
+xlabel('sex');
+ylabel('tail length (mm)');
+title("Scatterplot sex vs mass");
+xticks([0 1]);
+xticklabels(["F", "M"]);
 
 
 %% ----------------------- INTRO: STATISTICS -----------------------
@@ -128,8 +144,8 @@ title('Difference between groups')
 %% space to work on analyses
 
 
-
-
+% needs the Statistics and Machine learning toolbox
+[h p] = ttest2(Mass(Sex == 'm'),  Mass(Sex == 'f'))
 
 
 
@@ -141,7 +157,21 @@ title('Difference between groups')
 % There are functions that can convert numbers-to-strings and 
 % strings-to-numbers
 
+figure;
+scatter(Sex == 'm', Mass, 100, 'filled');
+xlim([-.5, 1.5]);
+
+xlabel('sex');
+ylabel('mass (g)');
+title_string = strcat("Scatterplot sex vs mass (p=", num2str(p), ")");
+title(title_string);
+xticks([0 1]);
+xticklabels(["F", "M"]);
 
 
 
 
+%%
+figure;
+b = bar([1 2 3; 4 5 6]');
+b(1).FaceColor = '#FFC0CB';

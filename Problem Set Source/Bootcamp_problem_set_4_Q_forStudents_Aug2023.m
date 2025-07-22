@@ -1,3 +1,6 @@
+% SOLUTION {
+1 + 1
+% SOLUTION }
 % Problem set 4
 % C Burgess & K Furman
 % updated 220725
@@ -37,7 +40,10 @@
 %% ----------------------- PROBLEM 4.1 -----------------------
 % Plot each variable to inspect the data
 
-
+primes = [];
+for i=1:100
+    
+end
 
 
 
