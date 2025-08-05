@@ -3,7 +3,7 @@
 % Updated 220725
 
 clc; clear; close all;
-load("/Users/jonathangould/Downloads/Burgess_MatlabModule/Problems Sets/Bootcamp_problem_set_2_data.mat")
+load("problem_set_2_data.mat")
 %% ----------------------- REVIEW: TYPES OF VARIABLES -----------------------
 
 % Some variables are not numbers! For example, experimental groups or

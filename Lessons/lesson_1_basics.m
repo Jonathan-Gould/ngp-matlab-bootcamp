@@ -37,15 +37,13 @@
 %[text] In order to suppress the output of a line of code, you simply end it with a semicolon. Let's try below. 
 %use a semicolon to suppress the output when you create result1 and result2
 
-result1 = 6 * 13;
-result2 = 24.5;
 
 %%
 %[text] When we used the semicolon, nothing popped up in our livescript. We'll keep using the semicolon from now on in order to keep our window clean. 
 %[text] Now that we've stored these numbers in variables, we can use these to do math quicker: 
 %create the variable total to hold the sum of result1 and result2
 
-total = result1 + result2;
+
 %%
 %[text] You can see that the variable `total` showed up in the Workspace, and it's equal to 102.5, the same result we got earlier when we did the math manually. 
 %[text] 
@@ -58,7 +56,7 @@ total = result1 + result2;
 %[text] ## Variables
 %[text] Variables are very helpful in coding - they prevent us from having to remember and type values over and over again, and they also allow us to update a value when we gain new information. For example, lets say we have a variable `apples`, which counts the number of apples in the fridge. 
 %create the variable apples, and set it equal to 2
-apples = 2;
+
 
 %%
 %[text] Now lets say I go to the store and buy 6 more apples. How can I tell MATLAB to change the value of the variable?
@@ -93,7 +91,7 @@ apples = 2;
 
 %%
 %[text] The class of `apples` is `double`. This refers to a double-precision floating-point number. The details of what that means aren't important, just know that the class `double` refers to a numeric value.  If you're used to a programming language other than MATLAB, a `double` is the same thing as a `float`. 
-%[text] There are also types of data which are not numeric, which store text as data. In MATLAB, there are two text data types, string arrays and character arrays. String arrays are created with double quotes, and character arrays Practice working with strings by creating two variables, one which contains your first name and one which contains your last name. 
+%[text] There are also types of data which are not numeric, which store text as data. In MATLAB, there are two text data types, string arrays and character arrays. String arrays are created with double quotes, and character arrays with single quotes. Practice working with strings by creating two variables, one which contains your first name and one which contains your last name. 
 %create the variables firstname and lastname
 
 
@@ -107,7 +105,7 @@ apples = 2;
 %add a space between your first and last name
 
 
-%[output:29d71998]
+
 %%
 %[text] This is a very useful  way of keeping track of data, such as the below case: 
 mouse_number = "M44";
@@ -115,7 +113,7 @@ date = "04202020";
 condition = "StimOff";
 housing_room = "B603";
 filename = strcat(mouse_number, "_", housing_room, "_", date, "_", condition);
-disp(filename) %[output:8b8f5f71]
+disp(filename)
 %%
 %[text] Another common data class is `logical`, which represents a condition as either `true` or `false` using the numbers `1` or `0` respectively. 
 %[text] Logical variables can be geenrated using logical operators, such as 
@@ -127,16 +125,16 @@ disp(filename) %[output:8b8f5f71]
 %[text] ~= not equal to
 %[text] Pay particular attention to the == operator, which tests the logical condition of whether two items are equal to each other. Importantly, this is distinct from the = operator, which assigns a value to a variable. 
 %generate boolean variables using logical operators
-%[output:58c619d7] %[output:6974d057] %[output:94fe91b4] %[output:75d842b8] %[output:4ccb914a]
+
 
 %%
 %[text] Since these logical variables are coded as 0 or 1, you can also use mathematical operations on them. This is a way to check how many of your variables are true. for example, 
 
-%[output:6580b5d2] %[output:06d8877b] %[output:29ce4b7a]
+
 %%
 %[text] We can also detect the class of variables in a logical way, by using is\* functions. For example, 
 %check if the value 4 is numeric
-%[output:728b0a61] %[output:31863432] %[output:2393cd75]
+
 
 %[text] The above command asks MATLAB whether the value 4 is numeric, and MATLAB returns the logical value of 1, meaning TRUE. You can use this is\* command for a lot of different variable classes, outlined here: https://www.mathworks.com/help/matlab/ref/is.html
 %%
@@ -145,33 +143,34 @@ disp(filename) %[output:8b8f5f71]
 %[text] In MATLAB, *all variables are arrays*, meaning that each variable can contain many elements at once. Above, when we created variables like `apples` which contained only a single variable, those were scalars. A scalar is actually still a type of array, a 1-by-1 array with 1 row and 1 column. 
 %[text] Let's make an array with multiple elements below. in MATLAB, arrays with multiple elements are delineated by square brackets, and the elements inside can be separated by either a space or  comma.  
 %create some arrays
-%[output:86781fb1] %[output:88bd37b5] %[output:4750cf61] %[output:13b514ce] %[output:565203c3] %[output:6abf145b]
+
+
 
 %%
 %[text] By using a space or a comma to separate values in an array, we tell MATLAB to put each value in its own column. This means that the array `[1,2,3,4,5]` would be a 1-by-5 array, with 1 row and 5 columns. In order to add multiple rows, we can use a semicolon to create a multidimensional matrix. Try this below:
 %create two_dim_matrix, which contains a two dimensional matrix
 
-%[output:1b206d90]
+
 %%
 %[text] This means that the matrix `[1,2,3,4,5;6,7,8,9,10]` would be a 2-by-5 matrix, with 2 rows and 5 columns. 
 %[text] Below, I create a 5-by-10 matrix, using variables which each contain an array. The actual numbers in the aray aren't important, i just picked random integers. 
-row1 = [4,7,2,8,5,7,9,3,2,8] %[output:383531ca]
-row2 = [5,7,2,8,5,3,8,9,2,8] %[output:20279e3f]
-row3 = [6,3,8,2,6,7,9,2,0,3] %[output:6accb3b9]
-row4 = [6,9,2,8,0,4,1,5,7,2] %[output:07d5d553]
-row5 = [1,4,8,3,9,0,3,2,6,7] %[output:49573710]
+row1 = [4,7,2,8,5,7,9,3,2,8]
+row2 = [5,7,2,8,5,3,8,9,2,8]
+row3 = [6,3,8,2,6,7,9,2,0,3]
+row4 = [6,9,2,8,0,4,1,5,7,2]
+row5 = [1,4,8,3,9,0,3,2,6,7]
 
-big_matrix = [row1;row2;row3;row4;row5] %[output:9b3cc27d]
+big_matrix = [row1;row2;row3;row4;row5]
 %%
 %[text] Now that we have this array, we can practice indexing into matrices. *Indexing* simply means extracting particular values of interest, at specific positions within the matrix. We can index into MATLAB matrices using `(row,column)` syntax as shown below: 
 %index into the big_matrix from above
 
-%[output:503eadc8] %[output:7f2a60e8] %[output:13c1a580] %[output:2ed9ea98] %[output:27390a69] %[output:5ef7b657]
+
 %%
 %[text] You can also index for logical conditionals, such as "all values greater than 5." 
 %[text] We can do this by first making a conditional statement to find out whether every value in `big_matrix` is greater than 5:
 %locate those values in big_matrix which are greater than 5
-%[output:6a424752]
+
 %%
 %[text] 
 %[text] ## Functions
@@ -218,103 +217,4 @@ big_matrix = [row1;row2;row3;row4;row5] %[output:9b3cc27d]
 %---
 %[metadata:view]
 %   data: {"layout":"onright","rightPanelPercent":21.7}
-%---
-%[output:29d71998]
-%   data: {"dataType":"text","outputData":{"text":" Gould Gould Gould Gould Gould Gould Gould\n","truncated":false}}
-%---
-%[output:8b8f5f71]
-%   data: {"dataType":"text","outputData":{"text":"M44_B603_04202020_StimOff\n","truncated":false}}
-%---
-%[output:58c619d7]
-%   data: {"dataType":"textualVariable","outputData":{"header":"logical","name":"ans","value":"   1\n"}}
-%---
-%[output:6974d057]
-%   data: {"dataType":"textualVariable","outputData":{"header":"logical","name":"ans","value":"   0\n"}}
-%---
-%[output:94fe91b4]
-%   data: {"dataType":"textualVariable","outputData":{"header":"logical","name":"ans","value":"   1\n"}}
-%---
-%[output:75d842b8]
-%   data: {"dataType":"textualVariable","outputData":{"header":"logical","name":"ans","value":"   0\n"}}
-%---
-%[output:4ccb914a]
-%   data: {"dataType":"textualVariable","outputData":{"header":"logical","name":"ans","value":"   1\n"}}
-%---
-%[output:6580b5d2]
-%   data: {"dataType":"textualVariable","outputData":{"header":"logical","name":"yes","value":"   1\n"}}
-%---
-%[output:06d8877b]
-%   data: {"dataType":"textualVariable","outputData":{"header":"logical","name":"no","value":"   0\n"}}
-%---
-%[output:29ce4b7a]
-%   data: {"dataType":"not_yet_implemented_variable","outputData":{"columns":"1","name":"ans","rows":"1","value":"3"},"version":0}
-%---
-%[output:728b0a61]
-%   data: {"dataType":"textualVariable","outputData":{"header":"logical","name":"ans","value":"   1\n"}}
-%---
-%[output:31863432]
-%   data: {"dataType":"textualVariable","outputData":{"header":"logical","name":"ans","value":"   0\n"}}
-%---
-%[output:2393cd75]
-%   data: {"dataType":"textualVariable","outputData":{"header":"logical","name":"ans","value":"   1\n"}}
-%---
-%[output:86781fb1]
-%   data: {"dataType":"matrix","outputData":{"columns":2,"name":"array1","rows":1,"type":"double","value":[["1","2"]]}}
-%---
-%[output:88bd37b5]
-%   data: {"dataType":"matrix","outputData":{"columns":4,"name":"array2","rows":1,"type":"double","value":[["1","2","4","7"]]}}
-%---
-%[output:4750cf61]
-%   data: {"dataType":"matrix","outputData":{"columns":4,"name":"array2_and_a_half","rows":1,"type":"double","value":[["1","2","4","7"]]}}
-%---
-%[output:13b514ce]
-%   data: {"dataType":"matrix","outputData":{"columns":2,"name":"array3","rows":2,"type":"double","value":[["1","2"],["3","4"]]}}
-%---
-%[output:565203c3]
-%   data: {"dataType":"matrix","outputData":{"columns":3,"name":"array4","rows":3,"type":"double","value":[["1","2","3"],["4","5","6"],["7","8","9"]]}}
-%---
-%[output:6abf145b]
-%   data: {"dataType":"matrix","outputData":{"columns":4,"name":"ans","rows":1,"type":"double","value":[["1","2","3","4"]]}}
-%---
-%[output:1b206d90]
-%   data: {"dataType":"matrix","outputData":{"columns":2,"name":"two_dim_matrix","rows":2,"type":"double","value":[["10","20"],["30","40"]]}}
-%---
-%[output:383531ca]
-%   data: {"dataType":"matrix","outputData":{"columns":10,"name":"row1","rows":1,"type":"double","value":[["4","7","2","8","5","7","9","3","2","8"]]}}
-%---
-%[output:20279e3f]
-%   data: {"dataType":"matrix","outputData":{"columns":10,"name":"row2","rows":1,"type":"double","value":[["5","7","2","8","5","3","8","9","2","8"]]}}
-%---
-%[output:6accb3b9]
-%   data: {"dataType":"matrix","outputData":{"columns":10,"name":"row3","rows":1,"type":"double","value":[["6","3","8","2","6","7","9","2","0","3"]]}}
-%---
-%[output:07d5d553]
-%   data: {"dataType":"matrix","outputData":{"columns":10,"name":"row4","rows":1,"type":"double","value":[["6","9","2","8","0","4","1","5","7","2"]]}}
-%---
-%[output:49573710]
-%   data: {"dataType":"matrix","outputData":{"columns":10,"name":"row5","rows":1,"type":"double","value":[["1","4","8","3","9","0","3","2","6","7"]]}}
-%---
-%[output:9b3cc27d]
-%   data: {"dataType":"matrix","outputData":{"columns":10,"name":"big_matrix","rows":5,"type":"double","value":[["4","7","2","8","5","7","9","3","2","8"],["5","7","2","8","5","3","8","9","2","8"],["6","3","8","2","6","7","9","2","0","3"],["6","9","2","8","0","4","1","5","7","2"],["1","4","8","3","9","0","3","2","6","7"]]}}
-%---
-%[output:503eadc8]
-%   data: {"dataType":"not_yet_implemented_variable","outputData":{"columns":"1","name":"ans","rows":"1","value":"4"},"version":0}
-%---
-%[output:7f2a60e8]
-%   data: {"dataType":"not_yet_implemented_variable","outputData":{"columns":"1","name":"ans","rows":"1","value":"5"},"version":0}
-%---
-%[output:13c1a580]
-%   data: {"dataType":"not_yet_implemented_variable","outputData":{"columns":"1","name":"ans","rows":"1","value":"6"},"version":0}
-%---
-%[output:2ed9ea98]
-%   data: {"dataType":"not_yet_implemented_variable","outputData":{"columns":"1","name":"ans","rows":"1","value":"7"},"version":0}
-%---
-%[output:27390a69]
-%   data: {"dataType":"not_yet_implemented_variable","outputData":{"columns":"1","name":"ans","rows":"1","value":"7"},"version":0}
-%---
-%[output:5ef7b657]
-%   data: {"dataType":"not_yet_implemented_variable","outputData":{"columns":"1","name":"ans","rows":"1","value":"7"},"version":0}
-%---
-%[output:6a424752]
-%   data: {"dataType":"matrix","outputData":{"columns":1,"name":"ans","rows":23,"type":"double","value":[["6"],["6"],["7"],["7"],["9"],["8"],["8"],["8"],["8"],["8"]]}}
 %---

@@ -1,6 +1,3 @@
-% SOLUTION {
-1 + 1
-% SOLUTION }
 % Problem set 4
 % C Burgess & K Furman
 % updated 220725
@@ -19,8 +16,6 @@
 % -Shadederrorbar
 
 %% ----------------------- PROBLEM SET #4 -----------------------
-
-% Import Problem_set_4_data
 
 % This dataset contains the following 5 variables:
 
