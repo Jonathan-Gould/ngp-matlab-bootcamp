@@ -2,11 +2,11 @@
 %%
 %[text] ## Plotting
 %[text] As you can imagine, plotting your data is an essential skill as a scientist. To explore some facets of plotting, we'll use a dataset called response-times, consisting of the amount of time it took people to respond to a visual cue during an experiment.
-%import responsetimes.txt and save it to the variable responseTimes
+%import responsetimes.txt and save it to the variable response_times
 
 
-%uncomment the below line in order to load responseTimes
-% responseTimes = importdata('responsetimes.txt');
+%uncomment the below line in order to load response_times
+% response_times = importdata('responsetimes.txt');
 %%
 %[text] For this dataset, we have 1000 entries. Each entry is one trial where a human subject was asked to respond to a visual cue, and their response time is recorded in milliseconds (ms). Lets start by getting some basic stats on the dataset first: 
 %%
