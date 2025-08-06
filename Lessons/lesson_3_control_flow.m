@@ -6,11 +6,7 @@
 %[text] This took us 10 lines of code, but we can do it in way less using a `for` loop.
 %[text] In MATLAB, loop syntax requires one line, with `while` or `for`, to initialize the condition of the loop. This is followed by the command(s) to execute within the loop, which must be tabbed over. To let MATLAB know the loop is over, we use the keyword `end`. 
 %[text] Lets try to accomplish the same task using a `for` loop. For a `for` loop, the syntax is almost the same, but we need to specify an *iterable object* to act upon. 
-%use a for loop to do this in even less lines of code 
-
-for i=1:2000
-    i;
-end
+%use a for loop to do this in fewer lines of code 
 
 %%
 %[text] The `for` loop can do it in even fewer lines. This is valuable, because the less lines of code you write, the less places there are for something to go wrong. 
