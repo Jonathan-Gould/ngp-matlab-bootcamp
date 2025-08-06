@@ -175,12 +175,7 @@ big_matrix = [row1;row2;row3;row4;row5]
 %[text] 
 %[text] ## Functions
 %[text] Lets quickly go over using Functions in MATLAB. We've already used a bunch of functions in this lesson so far. Can someone name a couple? 
-% abs()
-% sqrt()
-% disp()
-% strcat()
-% min()
-% isnumeric()
+
 %[text] These are only a small fraction of the number of functions that exist in MATLAB to be used for tons of different things. When we use a function, the function comes before the parentheses, and inside the parentheses are the "arguments" for the function. Each function has a different amount of arguments it can take: some take only one argument, some take multiple, and some functions can take an infinite number of arguments -all of this depends on what you want to do with them. We'll cover a lot more functions throughout these lessons. 
 %[text] If you ever need to know what a certain function does, you can simply type 
 %help [function name]
