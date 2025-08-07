@@ -1,6 +1,5 @@
 % Problem set 3
-% C Burgess & K Furman
-% Updated 220725
+% C Burgess, K Furman, J Gould
 
 
 %% ----------------------- REVIEW: TYPES OF DATA -----------------------
@@ -37,6 +36,10 @@ Mean_2 = mean(Sample_matrix,2)
 % You can also use the 'load' function (type 'help load' below to see how
 % to use that function)
 
+% SOLUTION {
+clc;clear;close all;
+load("problem_set_3_data.mat")
+% SOLUTION }
  
 % Data explanation:
 % Columns: Time in seconds
@@ -50,17 +53,26 @@ Mean_2 = mean(Sample_matrix,2)
 % Analyses:
 
 % Find the total distance travelled for each of the 60 trials
+% SOLUTION {
+distance_travelled = sum(Locomotion, 2);
+% SOLUTION }
 
 % Find the mean timecourse of the locomotor response
+% SOLUTION {
+mean_timecourse = mean(Locomotion, 1);
+% SOLUTION }
 
 % Plot how the locomotion changes across time (average of all trials)
+% SOLUTION {
+figure;
+subplot(2,1,1);
+plot(mean(Locomotion,2));
+title('solution 1')
 
-
-%% space to work on these analyses
-
-
-
-
+subplot(2,1,2);
+plot(Locomotion');
+title('solution 2')
+% SOLUTION }
 
 %% ----------------------- NOTE: USING FUNCTIONS FROM OTHERS -----------------------
 
@@ -103,10 +115,31 @@ end
 %use a for loop to subtract the mean of each trial from the
 %individual values in that trial, then also divide each value by the mean
 
+% SOLUTION {
+answer1 = (Locomotion - mean(Locomotion,2)) ./ mean(Locomotion,2);
+
+
+answer2 = nan * Locomotion;
+for i = 1:size(Locomotion,1)
+    trial = Locomotion(i,:);
+    trial_mean = mean(trial);
+    answer2(i,:) = (trial - trial_mean) / trial_mean;
+end
+
+answer3 = nan * Locomotion;
+for i = 1:size(Locomotion,1)
+    trial_mean = mean(Locomotion(i,:));
+    for j = 1:size(Locomotion,2)
+        answer3(i,j) = (Locomotion(i,j) - trial_mean) / trial_mean;
+    end
+end
+
+assert(all(answer1 == answer2, 'all'));
+assert(all(answer1 == answer3, 'all'));
+% SOLUTION }
+
 % plot the normalized data to see the normalized mean timecourse of
 % locomotion
-
-%% space to work on these analyses
 
 
 
@@ -154,16 +187,34 @@ Sample_matrix = rmmissing(Sample_matrix)
 % leave other trials unchanged
 
 
-%% space to work on these analyses
+% SOLUTION {
+answer2 = nan * Locomotion;
+for i = 1:size(Locomotion,1)
+    trial = Locomotion(i,:);
+    if abs(trial(2)) >= 10
+        trial_mean = mean(trial);
+        answer2(i,:) = (trial - trial_mean) / trial_mean;
+    else
+        answer2(i,:) = trial;
+    end
 
+end
 
+answer3 = nan * Locomotion;
+for i = 1:size(Locomotion,1)
+    trial_mean = mean(Locomotion(i,:));
+    if abs(Locomotion(i,2)) >= 10
+        for j = 1:size(Locomotion,2)
+            answer3(i,j) = (Locomotion(i,j) - trial_mean) / trial_mean;
+        end
+    else
+        for j = 1:size(Locomotion,2)
+            answer3(i,j) = Locomotion(i,j);
+        end
+    end
+end
 
+assert(~all(answer1 == answer3, 'all'));
+assert(all(answer2 == answer3, 'all'));
 
-
-
-
-
-
-
-
-
+% SOLUTION }

@@ -35,11 +35,27 @@
 %% ----------------------- PROBLEM 4.1 -----------------------
 % Plot each variable to inspect the data
 
-primes = [];
-for i=1:100
-    
-end
 
+% SOLUTION {
+load('problem_set_4_data.mat');
+% SOLUTION }
+
+% SOLUTION {
+figure;
+t = (1:size(Ensure_full,1))'/Sampling_rate;
+
+ax1 = subplot(3,1,1);
+plot(t,Fluorescence, 'k');
+
+ax2 = subplot(3,1,2);
+plot(t,Ensure_full);
+
+ax3 = subplot(3,1,3);
+plot(t,Lick_full);
+
+linkaxes([ax1, ax2, ax3], 'x')
+
+% SOLUTION }
 
 
 %% ----------------------- PROBLEM 4.2 -----------------------
@@ -48,6 +64,11 @@ end
 % Delta F over F (dF/F) - each point in the fluorescence trace should have
 % the F0 subtracted, then divided. In this case lets set the F0 as the 30th
 % percentile of the entire Fluorescence trace
+
+% SOLUTION {
+f0 = quantile(Fluorescence, .3);
+dff = (Fluorescence - f0)/f0;
+% SOLUTION }
 
 
 
@@ -58,12 +79,31 @@ end
 
 % find dF/F values around each ensure
 
+% SOLUTION {
+bounds = [1; Ensure_idx; numel(Ensure_full)];
+max_radius = min(diff(bounds))/2;
 
+window = [max_radius max_radius];
+traces = nan([length(Ensure_idx), sum(window)+1]);
 
+for i = 1:numel(Ensure_idx)
+    traces(i,:) = dff((Ensure_idx(i)-window(1)):(Ensure_idx(i) + window(2)));
+end
 
+figure;
+subplot(2,1,1);
+hold on;
+plot(traces');
+plot(mean(traces), 'k', 'LineWidth', 3);
+hold off;
 
-
-
+subplot(2,1,2);
+hold on;
+plot(quantile(traces, .1), 'k');
+plot(quantile(traces, .5), 'k');
+plot(quantile(traces, .9), 'k');
+hold off;
+% SOLUTION }
 
 %% ----------------------- PROBLEM 4.4 ----------------------- 
 %Demonstrate how the fluorescence changes in response to Ensure rewards
@@ -80,7 +120,34 @@ end
 
 
 
+% SOLUTION {
+bounds = [1; Ensure_idx; numel(Fluorescence)];
+max_radius = min(diff(bounds))/2;
 
+window = [max_radius max_radius];
+traces = nan([length(Ensure_idx), sum(window)+1]);
+
+for i = 1:numel(Ensure_idx)
+    traces(i,:) = Lick_full((Ensure_idx(i)-window(1)):(Ensure_idx(i) + window(2)));
+
+    kernel = normpdf(linspace(-10,10,100), 0, 1);
+    kernel = kernel / sum(kernel);
+    traces(i,:) = conv(traces(i,:), kernel,'same');
+end
+
+
+figure;
+subplot(2,1,1);
+hold on;
+plot(traces');
+plot(mean(traces), 'k', 'LineWidth', 3);
+hold off;
+
+subplot(2,1,2);
+hold on;
+plot(mean(traces), 'k');
+hold off;
+% SOLUTION }
 
 
 

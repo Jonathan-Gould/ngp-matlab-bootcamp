@@ -1,5 +1,5 @@
 % Problem set 2
-% C Burgess & K Furman
+% C Burgess, K Furman, J Gould
 % Updated 220725
 
 clc; clear; close all;
@@ -53,16 +53,16 @@ Group_a_results = Results(Experimental_group == 'a')
 % Analyses:
 
 % Calculate average tail length
+% SOLUTION {
+average_tail_length = mean(Tail_length);
+% SOLUTION }
+
 % Calculate average mass by sex (what is the average mass for Males, and
 %       what is the average mass for Females?)
-
-%% space to work on analyses
-
-average_tail_length = mean(Tail_length);
-
+% SOLUTION {
 average_male_mass = mean(Mass(Sex == 'm'));
 average_female_mass = mean(Mass(Sex == 'f'));
-
+% SOLUTION }
 
 
 
@@ -97,18 +97,18 @@ title('Difference between groups')
 % Make a plot to visualize relationship between tail length and mass
 %   -Think: what is the best plot for this?
 
-% Visualize sex differences in mass
-%   -Think: what is the best plot for this?
-
-%% space to work on analyses
-
+% SOLUTION {
 figure;
 scatter(Mass, Tail_length, 100, 'filled');
 xlabel('mass (g)');
 ylabel('tail length (mm)');
 title("Scatterplot of mass vs. tail length");
+% SOLUTION }
 
-%%
+% Visualize sex differences in mass
+%   -Think: what is the best plot for this?
+
+% SOLUTION {
 figure;
 scatter(Sex == 'm', Mass, 100, 'filled');
 xlim([-.5, 1.5]);
@@ -118,6 +118,9 @@ ylabel('tail length (mm)');
 title("Scatterplot sex vs mass");
 xticks([0 1]);
 xticklabels(["F", "M"]);
+% SOLUTION }
+
+
 
 
 %% ----------------------- INTRO: STATISTICS -----------------------
@@ -127,6 +130,9 @@ xticklabels(["F", "M"]);
 
 % Here we use the function, ttest2, to check whether the difference in
 % the example groups from before is statistically significant
+
+% NOTE: this requires the Statistics and Machine Learning toolbox, which
+% you will have to install
 [h,p]  = ttest2(Group_1,Group_2)
 
 %this function outputs:
@@ -141,11 +147,12 @@ xticklabels(["F", "M"]);
 
 % Test to see if the difference in mass by sex is statistically significant
 
-%% space to work on analyses
-
 
 % needs the Statistics and Machine learning toolbox
-[h p] = ttest2(Mass(Sex == 'm'),  Mass(Sex == 'f'))
+% SOLUTION {
+[h p] = ttest2(Mass(Sex == 'm'),  Mass(Sex == 'f'));
+% SOLUTION }
+
 
 
 
@@ -157,6 +164,7 @@ xticklabels(["F", "M"]);
 % There are functions that can convert numbers-to-strings and 
 % strings-to-numbers
 
+% SOLUTION {
 figure;
 scatter(Sex == 'm', Mass, 100, 'filled');
 xlim([-.5, 1.5]);
@@ -167,11 +175,4 @@ title_string = strcat("Scatterplot sex vs mass (p=", num2str(p), ")");
 title(title_string);
 xticks([0 1]);
 xticklabels(["F", "M"]);
-
-
-
-
-%%
-figure;
-b = bar([1 2 3; 4 5 6]');
-b(1).FaceColor = '#FFC0CB';
+% SOLUTION }

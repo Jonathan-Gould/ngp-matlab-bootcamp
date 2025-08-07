@@ -61,19 +61,12 @@ load('problem_set_1_data.mat');
 
 % Do the following analyses:
 % Calculate the range of salaries and years of education.
-
-% Calculate the average salary of the dataset.
-
-
-%% Use this space to work on these analyses
-
 lowest_salary = nan;
 highest_salary = nan;
 % SOLUTION {
 [lowest_salary, highest_salary] = bounds(salaries);
 check_answer([lowest_salary, highest_salary], 'Q1.1')
 % SOLUTION }
-
 
 lowest_yr_of_ed = nan;
 highest_yr_of_ed = nan;
@@ -82,9 +75,7 @@ highest_yr_of_ed = nan;
 check_answer([lowest_yr_of_ed, highest_yr_of_ed], 'Q1.2')
 % SOLUTION }
 
-
-
-
+% Calculate the average salary of the dataset.
 average_salary = nan;
 % SOLUTION {
 average_salary = mean(salaries);
@@ -97,15 +88,12 @@ check_answer(average_salary, 'Q1.3')
 % You can index an array based on the values from another array
 
 % what is the fourth salary?
-
-
-
-%% ---------------------- PROBLEM SET #1.2 ----------------------
 fourth_salary = nan;
 % SOLUTION {
 fourth_salary = salaries(4);
 check_answer(fourth_salary, 'Q2');
 % SOLUTION }
+
 
 %% Questions:
 
@@ -113,6 +101,7 @@ check_answer(fourth_salary, 'Q2');
 
 tenth_salary_is_less_than_100 = nan;
 % SOLUTION {
+tenth_salary_is_less_than_100 = salaries(10) < 100;
 check_answer(tenth_salary_is_less_than_100, 'Q3.1')
 % SOLUTION }
 
@@ -121,6 +110,9 @@ check_answer(tenth_salary_is_less_than_100, 'Q3.1')
 % Find all of the salaries over 100
 
 salaries_over_100 = nan;
+% SOLUTION {
+salaries_over_100 = salaries(salaries > 100);
+% SOLUTION }
 
 % Check that the above is correct. Are all the salaries over 100?
 
@@ -129,7 +121,13 @@ salaries_over_100 = nan;
 avg_salary_0yr = nan;
 avg_salary_2yr = nan;
 avg_salary_4yr = nan;
-avg_salary_8yr = nan;
+avg_salary_10yr = nan;
+% SOLUTION {
+avg_salary_0yr = salaries(year_of_ed == 0);
+avg_salary_2yr = salaries(year_of_ed == 2);
+avg_salary_4yr = salaries(year_of_ed == 4);
+avg_salary_10yr = salaries(year_of_ed == 10);
+% SOLUTION }
 
 
 %% ----------------------- PART FOUR: ERRORS ----------------------
@@ -143,6 +141,7 @@ avg_salary_8yr = nan;
 
 
 %try finding the 23rd element of the salaries array
+
 
 % Note that the error message provides useful information about why the
 % code did not work, including (depending on the nature of the error) the

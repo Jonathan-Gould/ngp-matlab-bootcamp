@@ -2,7 +2,7 @@
 clc; clear; close all;
 
 %% refresh the output directory
-outdir = [pwd filesep 'Problem Sets'];
+outdir = [pwd filesep 'problem sets'];
 if exist('Problem Sets', 'dir')
     rmdir(outdir, 's');
 end
@@ -17,7 +17,7 @@ for i = 1:numel(files)
     filePath = [sourceDir filesep files(i).name];
     oldText = fileread(filePath);
 
-    newText = regexprep(oldText, '^% SOLUTION {.+?% SOLUTION }(\s)*?\n', '', 'lineanchors');
+    newText = regexprep(oldText, '^% SOLUTION {.+?% SOLUTION }(\s)*?$', '', 'lineanchors');
     assert(mod(numel(strfind(oldText, 'SOLUTION')),2) == 0);
     % if (~numel(strfind(oldText, 'SOLUTION')) >= 2)
     %     disp("File %s didn't have any solutions.", fileName);
