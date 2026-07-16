@@ -1,4 +1,5 @@
 %% display hello world with disp
+% disp("hello world")
 display("hello world")
 
 %% add one plus one
@@ -86,47 +87,7 @@ is_one_equal_to_zero = (1 == 0)
 
 %% other comparisons like < and >=
 
-%% make an array of numbers, store it in the variable birth_years
-birth_years = [2000, 2002, 2006, 2004, 1998]
-
-%% access the first birth year
-birth_years(1)
-%% access the 1 + 2th element of birth_years
-birth_years(1 + 2)
-
-%% add the first and second elements of birth_years
-
-birth_years(1) + birth_years(2)
-
-%% find the biggest element of `array`
-max(birth_years)
-min(birth_years)
-
-%% use other descriptive statsitics
-mean
-std
-
-%% find which elements of `array` are bigger than 3
+%% clear your palette
 
 
-%% access the 3rd element of `array`
-birth_years(3)
-
-%% access the last element of `array`
-
-
-%% index into the array using boolean indexing
-birth_years([false true true true false])
-
-%%
-
-% TODO: do a paired comparison here
-
-s = birth_years >  2005
-
-young_birthdays = birth_years(s)
-
-%% this is a section comment
-
-% this is a normal comment
-birth_years(birth_years > 2000)
+%% the help function
