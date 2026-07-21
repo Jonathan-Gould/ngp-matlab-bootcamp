@@ -1,4 +1,4 @@
-Motivate each step?
+Motivate each step in abstraction?
 Start with console, build to scripts?
 
 lesson 1:
@@ -7,9 +7,9 @@ lesson 1:
   order of operations
     parentheses
     multiple ways to do a lot of stuff, exponentiation example
+  built-in functions
   variables
   output suppression
-  built-in functions
   variable assignment/reassignment
   variable names
   variable types
@@ -20,6 +20,13 @@ lesson 1:
       indexing
   help
   clear
+
+lesson 2:
+  clear
+  import data
+  line plot
+  figure annotation
+
 
 lesson 2a:
   vectors
@@ -48,3 +55,110 @@ working directories
 subscript
 vector subscript
 logical
+
+
+console -> text file
+literals -> variables
+numbers -> vectors
+module-level code -> functions
+
+
+
+store data in variables
+visualize the variables
+
+
+mouse_137_june
+mouse_137_july
+mouse_137_august
+mouse_137_september
+mouse_137_october
+mouse_137_november
+mouse_137_dcember
+
+Hi all! 
+
+OK, I'm thinking of formatting the class like this: 
+
+* Day 1:
+  * arithmetic and vectors
+    * MATLAB content:
+      * hello world
+      * arithmetic
+      * order of operations
+      * built-in functions
+      * variables
+      * variable types
+      * vectors
+    * other points:
+      * MATLAB is deterministic and understandable
+    * assignment:
+      * neuron density calculation
+      * celcius to farenheight conversion
+      * max / min
+      * mean / std
+      
+  * plotting
+    * MATLAB content:
+      * loading data
+      * scatterplot
+      * axes annotation
+      * plot customization
+      * plot exporting
+    * other points:
+      * errors are not failures
+    * assignment:
+      * load new data
+      * scatterplot & customization
+      * lineplot & customization
+      * histogram & customization
+
+* Day 2:
+  * loading data
+
+  * matrices
+    * MATLAB content:
+      * positional indexing
+      * basic slice indexing
+      * extra: sorting
+      * extra: boolean indexing
+    * other points:
+      * help function / learning resources / LLMs
+    * assignment:
+      * downloading data
+      * row/column means & interpretation
+      * row/column maximums/minimums & interpretation
+      * plotting individual rows
+  
+  * advanced indexing (?)
+
+  * loops
+    * MATLAB content:
+      * for loops
+    * other points:
+      * debugging MATLAB scripts?
+    * assignment:
+      * c to f on vectors
+      * apply previous assignment analysis to each row
+  
+  * functions
+    * MATLAB content:
+      * writing your own functions
+      * using downloaded functions
+      * c to f as a function
+    * other points:
+      * github/how to access other people's code
+      * install stats toolbox
+    * assignment:
+      * c to f as a function
+      * apply previous assignment analysis to each row
+
+* Day 3:
+  * matlab for statistical testing
+    * MATLAB content:
+      * t-test for well data
+      * for loop to approximate the sampling distribution (coordinate with Megan)
+    * assignments:
+      * for loop to approximate the sampling distribution of the mean of a dataset
+
+  * replicating the analysis described in a previous paper?
