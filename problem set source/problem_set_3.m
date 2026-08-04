@@ -39,7 +39,7 @@ lever_presses = [ 0 46 2 52 0 41 44 0 3 4 79 2 2 0 71 89 0 6 0 26 81 1 0 41 46 2
 % and the number of lever presses it made in the last session.
 % Make sure to label the axes and add a title.
 % Feel free to customize it as well!
-% hint: the `scatterplot` function may be useful here
+% hint: the `scatter` function may be useful here
 
 
 
