@@ -1,5 +1,6 @@
 %% Display hello world with disp
-% Green lines with a percent sign are comments. They are not executed as code, but they can be used to explain what the code is doing.
+% Green lines with a percent sign are comments. They are not executed as 
+% code, but they can be used to explain what the code is doing.
 % Let's write our first line of code in MATLAB!
 % disp("hello world")
 
@@ -38,17 +39,17 @@
 
 %% Compare two numbers using the greater than operator
 % Try comparing if 5 is greater than 3 using the greater than operator (>). 
-% This will return a value of true or false, unlike the numbers we have been working with so far.
+% This will return a value of true or false, unlike the numbers we have 
+% been working with so far.
 
 
 %% Compare two numbers using the less than than operator
 % Try comparing if 5 is less than 3 using the less than operator (<).
 
 
-
 %% Convert 0 degrees Celsius to Fahrenheit
-% Our first practical application of MATLAB will be to convert temperatures from Celsius to Fahrenheit. 
-% The formula for this conversion is F = C * 9/5 + 32.
+% Our first practical application of MATLAB will be to convert temperatures 
+% from Celsius to Fahrenheit. 
 % Let's start by converting 0 degrees Celsius to Fahrenheit.
 
 
@@ -70,17 +71,24 @@
 
 %% Variables
 % This is somewhat repetitive, isn't it?
-% Let's store the temperature in a variable so we don't have to type the formula over and over again.
-% You can think of a variable as a named bucket that can hold a value.
-% We can put whatever we want in the bucket, and whenever we want what's inside, we just name the bucket.
+% Let's store the temperature in a variable so we don't have to type the 
+% formula over and over again. You can think of a variable as a named 
+% bucket that can hold a value. We can put whatever we want in the bucket, 
+% and whenever we want what's inside, we just name the bucket.
 
 
 
 %% Convert an arbitrary temperature in Celsius to Fahrenheit using variables
 
 
+%% Calculate the cost of housing mice for an experiment using variables
+groups_needed = 4;
+mice_per_group = 4;
+cost_per_mouse_per_day = 1.5;
+days_needed = 20;
 
-%% Variables can be used to store text
+
+%% Variables can be used to store text (strings)
 
 
 %% Store your name in a variable
@@ -93,6 +101,7 @@
 
 
 %% Types of varaibles so far
+% to mention: nan, booleans, character vectors vs strings
 
 
 %% clear your palette
