@@ -2,8 +2,7 @@ clc; clear; close all;
 
 % https://elifesciences.org/articles/49041
 
-data = readtable("elife-49041-fig2-data1-v2.xlsx");
-
+data = readtable("~/Downloads/elife-49041-fig2-data1-v2.xlsx");
 
 
 %%

@@ -17,7 +17,6 @@
 % that the first element of session corresponds to the first element of
 % mouse_7_behavior_score, and so on. Together, they describe the behavior
 % score of mouse 7 across 5 sessions.
-
 session = [1 2 3 4 5];
 mouse_7_behavior_score = [-0.7697 -0.8375 0.1477 0.3545 0.5698]; % Pavlovian conditioned approach (PCA) in the paper
 
