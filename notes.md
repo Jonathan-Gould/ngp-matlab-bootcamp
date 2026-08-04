@@ -81,7 +81,7 @@ Hi all!
 OK, I'm thinking of formatting the class like this: 
 
 * Day 1:
-  * arithmetic and vectors
+  * arithmetic
     * MATLAB content:
       * hello world
       * arithmetic
@@ -89,7 +89,6 @@ OK, I'm thinking of formatting the class like this:
       * built-in functions
       * variables
       * variable types
-      * vectors
     * other points:
       * MATLAB is deterministic and understandable
     * assignment:
@@ -98,6 +97,11 @@ OK, I'm thinking of formatting the class like this:
       * max / min
       * mean / std
       
+
+    * vectors
+
+
+
   * plotting
     * MATLAB content:
       * loading data
@@ -124,6 +128,7 @@ OK, I'm thinking of formatting the class like this:
       * extra: boolean indexing
     * other points:
       * help function / learning resources / LLMs
+      * this is just like arrays
     * assignment:
       * downloading data
       * row/column means & interpretation
