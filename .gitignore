@@ -1,6 +1,6 @@
 *.sw*
 **/.DS_Store
-Problem Sets/*
+2025/problem\ sets
 # **/*.pptx
 *.asv
 ~*

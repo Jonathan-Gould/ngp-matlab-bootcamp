@@ -9,18 +9,29 @@ data = readtable("~/Downloads/elife-49041-fig2-data1-v2.xlsx");
 figure;
 hold on;
 
+behavior_scores = [];
+phenotype_groups = {};
+
 for s = unique(data.Subject)'
     single_subject_table = data(data.Subject == s, :);
 
     if (single_subject_table.Phenotype{end} == 'GT')
         color = 'red';
+        phenotype_groups{end+1} = "GT";
     else
         color = 'blue';
+        phenotype_groups{end+1} = "ST";
     end
         plot(single_subject_table.PCA_Index, Color=color)
+        behavior_scores = [behavior_scores; single_subject_table.PCA_Index'];
 
 end
 hold off;
+
+phenotype_groups = cell2mat(phenotype_groups);
+
+%%
+save("~/Downloads/campus19.mat", 'behavior_scores', 'phenotype_groups')
 
 %%
 figure;

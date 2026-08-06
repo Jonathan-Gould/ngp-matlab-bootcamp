@@ -76,10 +76,6 @@ mouse_137_october
 mouse_137_november
 mouse_137_dcember
 
-Hi all! 
-
-OK, I'm thinking of formatting the class like this: 
-
 * Day 1:
   * arithmetic
     * MATLAB content:
@@ -167,3 +163,10 @@ OK, I'm thinking of formatting the class like this:
       * for loop to approximate the sampling distribution of the mean of a dataset
 
   * replicating the analysis described in a previous paper?
+
+
+
+TODO: email Becky
+
+
+Reccomend downloading the files one at a time, not as a zip.

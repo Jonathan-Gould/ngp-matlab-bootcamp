@@ -1,53 +1,82 @@
-% Lesson 3: 2-dimensional arrays
+clc; clear; close all;
 
-%% clear your programming palette
+%% Loading data
+% use the `load` function for the file "mouse_restriction_weights.mat"
 
-
-
-%% create a 4x4 array using ✨magic✨
-
-
-
-%% get the size of your array using size
-
+% method 1: drag and drop
+% method 2: find the file in MATLAB's explorer
+% method 3: load based on file location
+load("/Users/jgould/Downloads/mouse_restriction_weights.mat")
+mouse_weights = table2array(mouse_weights)
 
 
-%% extract the element at 1,1
+%% Matrix shape
+size(mouse_weights)
+
+size(mouse_weights, 1)
+
+size(mouse_weights, 2)
+
+%% Matrix transpose
+normal_size = size(mouse_weights)
+transpose_size = size(mouse_weights')
+
+mouse_weights_transposed = mouse_weights';
+
+%% Matrix positional indexing
+
+mouse_weights(1,1)
+
+mouse_weights(2,1)
+
+mouse_weights(1,3)
+
+mouse_weights(3,6)
+
+%% Matrix slices, row
+
+mouse_weights(1, :)
+
+%% Matrix slices, column
+
+mouse_weights(:,3)
+
+%% Operations on a whole matrix
+mouse_weights - mean(mouse_weights)
+
+%% Operations along matrix axes
+% Average the whole matrix.
+
+column_means = mean(mouse_weights)
+
+whole_matrix_mean = mean(mouse_weights, "all", "omitmissing")
+column_means = mean(mouse_weights, 1, "omitmissing")
+row_means = mean(mouse_weights, 2, "omitmissing")
 
 
+%% Max
 
-%% extract the element at 4,4
+whole_matrix_max = max(mouse_weights, [], "all", "omitmissing")
 
-
-
-%% extract the element at 4,4 using end
-
-
-
-%% extract the first column using slice notation
+column_max = max(mouse_weights, [], 1)
+row_max = max(mouse_weights, [], 2)
 
 
+%% Plot
 
-%% extract the second row using slice notation
+plot(mouse_weights', '.-')
 
+%%
+plot(mouse_weights, '.-')
 
+%% Subtraction, axis 1
 
-%% add 1 to the whole array
+mouse_weights - mouse_weights(:, 1)
 
+%% Subtraction, axis 2
 
+mouse_weights - mouse_weights(1, :)
 
-%% transpose the array
+%% Subtraction, whole array
 
-
-
-%% get the maximum of each column
-
-
-
-%% get the maximum of the whole array
-
-
-
-
-
-
+mouse_weights - mean(mouse_weights, 'all', 'omitmissing')

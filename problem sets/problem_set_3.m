@@ -1,3 +1,5 @@
+clc; clear; close all;
+
 %% Review
 % In general, your template for a figure should look like this:
 
@@ -33,6 +35,20 @@ lever_presses = [ 0 46 2 52 0 41 44 0 3 4 79 2 2 0 71 89 0 6 0 26 81 1 0 41 46 2
 % axes and add a title. This will replicate a single trace in figure 2B.
 % hint: the `plot` function may be useful here
 
+figure;
+plot(session, mouse_7_behavior_score, 'magenta', 'LineStyle',"--", "LineWidth", 4)
+xlabel('session', 'FontSize', 15)
+ylabel('Pavlovian conditioned approach (PCA) score', 'FontSize', 15)
+title('Mouse 7 PCA score over time')
+
+
+
+%% Line plot 2
+% Re-plot the line plot from above, but this time customize it.
+% Make the line bold, and change is color.
+% Can you add a legend?
+
+% skip
 
 %% Scatter plot
 % Create a scatter plot of the relationship between a mouse's behavior score
@@ -41,10 +57,46 @@ lever_presses = [ 0 46 2 52 0 41 44 0 3 4 79 2 2 0 71 89 0 6 0 26 81 1 0 41 46 2
 % Feel free to customize it as well!
 % hint: the `scatter` function may be useful here
 
-
+figure;
+scatter(lever_presses, behavior_scores, 'filled');
+xlabel('number of lever presses')
+ylabel('PCA behavior score')
+title('PCA behavior score vs number of lever presses in the last session')
+xlim([-10 120]);
 
 %% Histogram
 % Create a histogram of the behavior scores across all 126 mice. Adjust the
 % number of bins to make the histogram look nice. Make sure to label the
 % axes and add a title.
 % hint: the `histogram` function may be useful here
+
+fig = figure();
+histogram(behavior_scores, 50);
+xlabel('bins');
+ylabel('counts');
+title("Distribution of PCA scores across all mice");
+
+
+%%
+fig1 = figure();
+histogram(behavior_scores, 5);
+
+
+fig2 = figure();
+histogram(behavior_scores, 50);
+
+
+%%
+
+fig = figure();
+histogram(behavior_scores, 25);
+
+exportgraphics(fig, "histogram.png")
+exportgraphics(fig, "histogram.svg", "ContentType", "vector")
+
+%% Export your figures to images
+% Use the following commands to save your histogram. Compare the two
+% outputted images.
+
+% 
+% exportgraphics(fig, "histogram.svg", "ContentType", "vector")
