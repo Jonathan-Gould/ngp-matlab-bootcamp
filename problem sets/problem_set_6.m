@@ -32,6 +32,7 @@
 %% Initial data processing:
 % Calculate the dF/F for each trace, using an F0 of the 30th percentile of
 % the trace.
+% `quantile(Fluo_traces, .3, ?)` will operate over either rows or columns
 
 
 %% Visual response
@@ -45,21 +46,26 @@
 % analysis.
 
 
-%% Define a metric to describe how visually responsive a neuron is
+%% Define a metric to quantify how visually responsive a neuron is
 % Maybe put this metric in a function?
 
 
-%% Apply your metric to all of the neurons. Can you find a most responsive neuron?
+%% Apply your metric to all of the neurons. Which neuron is most responsive?
+
 
 
 %% Do some neurons respond to some directions of stimulation and not others?
 
 
+
 %% What does an average response look like?
+
 
 
 %% Do some neurons respond to similar kinds of stimulations?
 % Does this tuning continuously vary, or are there groups?
 
 
+
 %% Feel free to explore your own analyses here!
+

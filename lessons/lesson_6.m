@@ -21,41 +21,32 @@ clc; clear;
 
 %% Plot each variable to inspect the data
 
-plot(Fluorescence)
 
-
-%% Process the Fluorescence data
-
+%% Normalize the Fluorescence data
 % Delta F over F (dF/F) - each point in the fluorescence trace should have
 % the F0 subtracted, then divided. In this case let's set the F0 as the 
 % 30th percentile of the entire Fluorescence trace
 
-F0 = quantile(Fluorescence, .3);
-normalized_flouresence = (Fluorescence - F0) / F0;
+
+%% Mark the times of the Ensure events using `xline`
 
 
-
-%% Plot the change in fluorescence around ensure availability
+%% Plot the change in fluorescence around the first Ensure reward
 % how long before/after each ensure reward do you want to look?
 
+
+%% Plot the change in fluorescence around ensure availability for all trials
+% how long before/after each ensure reward do you want to look?
 
 
 %% Plot the change in fluorescence around licks
 
 
-
-%% Quantify how the fluorescence changes in response to Ensure rewards
-
+%% Quantify how the fluorescence changes in response to the first Ensure reward
 
 
-%% Quantify how lick rate changes in response to Ensure rewards
+%% Quantify how the fluorescence changes in response to all Ensure rewards
 
 
-
-
-
-
-
-
-
+%% Quantify how the fluorescence changes in response to all lick events
 

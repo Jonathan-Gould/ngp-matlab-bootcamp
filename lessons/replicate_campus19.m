@@ -5,7 +5,7 @@ clc; clear; close all;
 data = readtable("~/Downloads/elife-49041-fig2-data1-v2.xlsx");
 
 
-%%
+%% Replicate 2B
 figure;
 hold on;
 
@@ -30,10 +30,10 @@ hold off;
 
 phenotype_groups = cell2mat(phenotype_groups);
 
-%%
-save("~/Downloads/campus19.mat", 'behavior_scores', 'phenotype_groups')
+%% Save for students
+% save("~/Downloads/campus19.mat", 'behavior_scores', 'phenotype_groups')
 
-%%
+%% Replicate 2H
 figure;
 hold on;
 
@@ -65,7 +65,8 @@ plot(mean(st_all,2,'omitmissing'), 'LineWidth', 3, 'Color', [0 0 1]);
 
 hold off;
 
-%%
+%% Attempt to replicate 2I
+% TODO: something seems off, though; there shouldn't be this much overlap
 
 data.Phenotype = categorical(data.Phenotype);
 data.Treatment = categorical(data.Treatment);
