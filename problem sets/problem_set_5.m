@@ -7,7 +7,7 @@ clc; clear; close all;
 %% Per-mouse means
 % Use a for loop to calculate mean PCA score of each mouse across all 
 % timepoints. Then use the `disp` function to report the mouse number and 
-% its mean weight.
+% its mean PCA score.
 
 % Use something like this:
 % disp("Mouse " + nan + " experimental group " + nan + " mean weight: " + nan + " grams.")

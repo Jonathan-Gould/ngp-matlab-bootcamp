@@ -1,6 +1,8 @@
 % J Gould, C Burgess
 % updated 260806
 
+% data is here: https://github.com/Jonathan-Gould/ngp-matlab-bootcamp
+
 % Suggested reading: Functional imaging with cellular
 % resolution reveals precise microarchitecture in visual cortex
 % Ohki et al., 2005
