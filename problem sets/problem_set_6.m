@@ -9,7 +9,7 @@
 
 
 %%                              Problem set 6
-% We will be using flouresence_data.mat for this problem set.
+% We will be using problem_set_6_data for this problem set.
 
 % Data explanation:
 
@@ -36,6 +36,8 @@
 % the trace.
 % `quantile(Fluo_traces, .3, ?)` will operate over either rows or columns
 
+F0 = quantile(Fluo_traces, .3, 2);
+(Fluo_traces - F0) ./ F0
 
 %% Visual response
 % Visualize a neuron's dFF trace and the visual stimulation onsets to
@@ -71,3 +73,4 @@
 
 %% Feel free to explore your own analyses here!
 
+%%

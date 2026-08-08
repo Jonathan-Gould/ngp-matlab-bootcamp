@@ -51,6 +51,8 @@ dFF = (Fluorescence - F0) / F0;
 figure;
 plot(dFF);
 
+
+% Ensure_idx is just like Vistim_onsetxxxxx
 hold on;
 for i = 1:size(Ensure_idx, 1)
     xline(Ensure_idx(i));
