@@ -170,3 +170,29 @@ TODO: email Becky
 
 
 Reccomend downloading the files one at a time, not as a zip.
+
+
+
+
+
+## Notes from LLM session
+
+introduce rubber duck; it's a fancier rubber duck
+
+talk with everyone how they use it already!
+
+make a deliberate decision to use an LLM; maybe just don't, that's cool too!
+
+encourage pair coding
+
+honestly have Andrew do this talk
+
+approach coding like the rest of your science; doubt everything, think through the problem, ***
+
+give the LLM as small of a problem as possible
+
+have a way to asess the quality of the output; best use cases are where you have a verifiable answer
+
+old man yells at claude
+
+talk about sharing code; you'll want to share with other students, and eventually publish it
